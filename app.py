@@ -86,7 +86,7 @@ def users():
         return '', 201
 
 
-@app.route('/users/<int.uid>', methods=['GET', 'PUT', 'DELETE'])
+@app.route('/users/<int:uid>', methods=['GET', 'PUT', 'DELETE'])
 def user(uid: int):
     user = User.query.get(uid)
     if request.method == 'GET':
@@ -124,7 +124,7 @@ def orders():
         return '', 201
 
 
-@app.route('/orders/<int.oid>', methods=['GET', 'PUT', 'DELETE'])
+@app.route('/orders/<int:oid>', methods=['GET', 'PUT', 'DELETE'])
 def order(oid: int):
     order = Order.query.get(oid)
     if request.method == 'GET':
@@ -165,7 +165,7 @@ def offers():
         return '', 201
 
 
-@app.route('/offers/<int.oid>', methods=['GET', 'PUT', 'DELETE'])
+@app.route('/offers/<int:oid>', methods=['GET', 'PUT', 'DELETE'])
 def offer(oid: int):
     offer = Offer.query.get(oid)
     if request.method == 'GET':
